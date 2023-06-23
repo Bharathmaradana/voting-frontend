@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Login from "./Components/Login";
+import Register from "./Components/Register";
+import { useState, createContext } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Rooms from "./Components/Dashboard/Rooms";
+import Addrepresent from "./Components/Dashboard/Addrepresent";
+import Home from "./Components/LandingPage/Home";
+import Timer from "./Components/Timer";
+import Timeout_1 from "./Components/Dashboard/Timeout_1";
+import MainResults from "./Components/Dashboard/MainResults";
+import ProfilePage from "./Components/Dashboard/Profile";
+import Analytics from "./Components/Dashboard/Analytics";
 
+export const store = createContext();
 function App() {
+  const [token, settoken] = useState(null);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <store.Provider value={[token, settoken]}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/Home" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/Register" element={<Register />} />
+            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/Rooms" element={<Rooms />} />
+            <Route path="/addrepresent" element={<Addrepresent />} />
+            <Route path="/timeout" element={<Timeout_1 />} />
+            <Route path="/result" element={<MainResults />} />
+            <Route path="/Profile" element={<ProfilePage />} />
+            <Route path="/Analytics" element={<Analytics />} />
+          </Routes>
+        </BrowserRouter>
+      </store.Provider>
     </div>
   );
 }
