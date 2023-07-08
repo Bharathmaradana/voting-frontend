@@ -15,16 +15,13 @@ function MainResults() {
         something i want toknow about this
       </h1>
       <div style={{ height: "30px" }}>
-        <Result />
+        <Result style={{ color: "white" }} />
       </div>
     </div>
   );
 }
 
 export default MainResults;
-
-
-
 
 // import React from 'react';
 // import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';

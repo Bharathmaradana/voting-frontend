@@ -22,12 +22,16 @@ function Login() {
   const submitdata = (e) => {
     e.preventDefault();
     axios.post("http://localhost:5003/login", data).then((res) => {
-      console.log(data);
-
-      if (res.data.token != null) {
-        localStorage.setItem("token", res.data.token);
+      console.log("something");
+      console.log(res.data);
+      if (res.data.token) {
+        if (res.data.token != null) {
+          localStorage.setItem("token", res.data.token);
+        } else {
+          alert("please enter correct password");
+        }
       } else {
-        alert("please enter correct password");
+        alert("Please Register there is no account");
       }
       setdata({
         email: "",
@@ -36,7 +40,7 @@ function Login() {
     });
   };
 
-  if (localStorage.getItem("token") != null) {
+  if (localStorage.getItem("token")) {
     console.log("something");
     return <Navigate to="/Rooms" />;
   }
@@ -98,7 +102,12 @@ function Login() {
               </div>
 
               <div className="container-login100-form-btn">
-                <button className="login100-form-btn">Login</button>
+                <button
+                  className="login100-form-btn"
+                  // onClick={() => submitdata()}
+                >
+                  Login
+                </button>
               </div>
 
               <div className="text-center p-t-12">

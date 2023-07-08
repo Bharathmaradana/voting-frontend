@@ -23,6 +23,7 @@
     "react-scripts": "5.0.1",
     "recharts": "^2.5.0",
     "styled-components": "^5.3.9",
+    "sweetalert": "^2.1.2",
     "tsparticles-engine": "^2.9.3",
     "tsparticles-fireworks": "^2.9.3",
     "tsparticles-preset-fireworks": "^2.9.3",

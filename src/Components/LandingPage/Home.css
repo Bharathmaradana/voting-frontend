@@ -32,7 +32,7 @@ body {
 }
 
 section {
-  min-height: 100vh;
+  min-height: 100%;
   padding: 0 9%;
   padding-top: 7.5rem;
   padding-bottom: 2rem;
@@ -40,6 +40,7 @@ section {
 
 .btn {
   display: inline-block;
+
   margin-top: 1rem;
   padding: 0.8rem 3rem;
   border-radius: 5rem;
@@ -112,7 +113,6 @@ header label {
 
 .home {
   display: flex;
-
   align-items: center;
   justify-content: center;
   background: url("./imgs/home-bg-img.png") no-repeat;
@@ -400,6 +400,7 @@ header label {
 }
 
 .contact {
+
   display: flex;
   align-items: center;
   justify-content: center;

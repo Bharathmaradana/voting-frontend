@@ -15,6 +15,11 @@ export class Result extends React.PureComponent {
       preset: "fireworks",
     };
 
-    return <Particles options={options} init={this.customInit} />;
+    return (
+      <div>
+        <Particles options={options} init={this.customInit} />
+        <p>something</p>
+      </div>
+    );
   }
 }

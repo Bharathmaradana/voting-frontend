@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import homeimg from "./imgs/home-img.png";
+import homeimg from "./imgs/f4.png";
 import aboutimg from "./imgs/about-img.png";
 import ficon1 from "./imgs/f-icon1.png";
 import ficon2 from "./imgs/f-icon2.png";
@@ -11,16 +11,15 @@ import pic2 from "./imgs/pic2.png";
 import pic3 from "./imgs/pic3.png";
 import { Navigate } from "react-router-dom";
 function Home() {
-   if (localStorage.getItem("token") == null) {
-     return <Navigate to="/login" />;
-   }
-   const logout_1 = () => {
-     localStorage.clear();
-     refreshPage();
-     function refreshPage() {
-       window.location.reload(false);
-     }
-   };
+  const logout_1 = () => {
+    localStorage.clear();
+    refreshPage();
+    function refreshPage() {
+      window.location.reload(false);
+    }
+  };
+
+   
   return (
     <div>
       <header>
@@ -32,17 +31,17 @@ function Home() {
         <label for="menu-bar" className="fas fa-bars"></label>
 
         <nav className="navbar">
-          <a href="/Home">Home</a>
-          <a href="/Home">Features</a>
+          <a href="/">Home</a>
+          <a href="/">Features</a>
           {localStorage.getItem("roomid") ? (
             <a href="/Dashboard">Dasboard</a>
           ) : (
-            <a href="/Home">About</a>
+            <a href="/">About</a>
           )}
           {localStorage.getItem("userid") ? (
             <a href="/Profile">Profile</a>
           ) : (
-            <a href="/Home">Rating</a>
+            <a href="/">Rating</a>
           )}
 
           {localStorage.getItem("userid") ? (
@@ -51,7 +50,7 @@ function Home() {
             <a href="/Register">Register</a>
           )}
           {localStorage.getItem("userid") ? (
-            <a onClick={() => logout_1()} href="/Login">
+            <a onClick={() => logout_1()} href="/">
               Logout
             </a>
           ) : (
@@ -70,7 +69,7 @@ function Home() {
             their vote from any where in the world. Claiming your vote makes a
             new future . Come with Us!! We shape the Future
           </p>
-          <a href="#" className="btn">
+          <a href="/Login" className="btn">
             Register/Login Now
           </a>
         </div>
@@ -92,7 +91,7 @@ function Home() {
               create that will conduct the election and the results will be
               decleared through digitally.
             </p>
-            <a href="#" className="btn">
+            <a href="/login" className="btn">
               Create
             </a>
           </div>
@@ -134,26 +133,27 @@ function Home() {
           </div>
 
           <div className="content">
-            <h3>Easy And Perfect Solution For Your Business App</h3>
+            <h3>Easy And Perfect Solution For Voting through online</h3>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla
-              placeat deserunt saepe repudiandae veniam soluta minima dolor hic
-              aperiam iure.
+              The pandemic emphasized the preciousness of life, reminding us of
+              the importance of health, well-being, and the people we hold dear.
+              It taught us to appreciate the simple joys and moments that make
+              life meaningful, such as spending time with loved ones, pursuing
+              passions, and cherishing our mental and emotional well-being.
             </p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Laudantium, quaerat. Dolorem ratione saepe magni quo inventore
-              porro ab voluptates eos, nam eius provident accusantium, quia
-              similique est, repellendus et reiciendis.
+              We our one among us and created this site to make everything
+              digilized and this online voting is system one among them . Where
+              ever you are you can claim you vote for a better society
             </p>
             <div className="buttons">
-              <a href="#" className="btn">
+              <a href="/login" className="btn">
                 {" "}
-                <i className="fab fa-apple"></i> app store{" "}
+                <i className="fab fa-apple"></i> Login
               </a>
-              <a href="#" className="btn">
+              <a href="/register" className="btn">
                 {" "}
-                <i className="fab fa-google-play"></i> google-play{" "}
+                <i className="fab fa-google-play"></i> Register
               </a>
             </div>
           </div>
@@ -162,85 +162,12 @@ function Home() {
 
       <div className="newsletter">
         <h3>Subscribe For New Features</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus sed
-          aliquam quibusdam neque magni magnam est laborum doloribus, facere
-          dolores.
-        </p>
+        <p>Please ping us for forther information our people will reach out</p>
         <form action="">
           <input type="email" placeholder="enter your email" />
-          <input type="submit" value="Subscribe" />
+          <input type="submit" value="Get in touch" />
         </form>
       </div>
-
-      <section className="review" id="review">
-        <h1 className="heading"> people's review </h1>
-
-        <div className="box-container">
-          <div className="box">
-            <i className="fas fa-quote-right"></i>
-            <div className="user">
-              <img src={pic1} alt="" />
-              <h3>john deo</h3>
-              <div className="stars">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-              </div>
-              <div className="comment">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Possimus et, perspiciatis nisi tempore aspernatur accusantium
-                sed distinctio facilis aperiam laborum autem earum repellat,
-                commodi eum. Ullam cupiditate expedita officiis obcaecati?
-              </div>
-            </div>
-          </div>
-
-          <div className="box">
-            <i className="fas fa-quote-right"></i>
-            <div className="user">
-              <img src={pic2} alt="" />
-              <h3>john deo</h3>
-              <div className="stars">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star-half-alt"></i>
-              </div>
-              <div className="comment">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Possimus et, perspiciatis nisi tempore aspernatur accusantium
-                sed distinctio facilis aperiam laborum autem earum repellat,
-                commodi eum. Ullam cupiditate expedita officiis obcaecati?
-              </div>
-            </div>
-          </div>
-
-          <div className="box">
-            <i className="fas fa-quote-right"></i>
-            <div className="user">
-              <img src={pic3} alt="" />
-              <h3>john deo</h3>
-              <div className="stars">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="far fa-star"></i>
-              </div>
-              <div className="comment">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Possimus et, perspiciatis nisi tempore aspernatur accusantium
-                sed distinctio facilis aperiam laborum autem earum repellat,
-                commodi eum. Ullam cupiditate expedita officiis obcaecati?
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section className="pricing" id="pricing">
         <h1 className="heading"> Our Pricing Plans </h1>
@@ -248,13 +175,11 @@ function Home() {
         <div className="box-container">
           <div className="box">
             <h3 className="title">basic</h3>
-            <div className="price">
-              $10<span>/monthly</span>
-            </div>
+            <div className="price">FREE</div>
             <ul>
               <li>
                 {" "}
-                <i className="fas fa-check"></i> 1000+ downloads{" "}
+                <i className="fas fa-check"></i> 1000 USERS{" "}
               </li>
               <li>
                 {" "}
@@ -262,14 +187,14 @@ function Home() {
               </li>
               <li>
                 {" "}
-                <i className="fas fa-times"></i> unlimited storage{" "}
+                <i className="fas fa-times"></i> 100 Rooms{" "}
               </li>
               <li>
                 {" "}
-                <i className="fas fa-times"></i> 5 downloads{" "}
+                <i className="fas fa-times"></i> 1000 Enteries{" "}
               </li>
             </ul>
-            <a href="#" className="btn">
+            <a href="/Login" className="btn">
               check out
             </a>
           </div>
@@ -282,7 +207,7 @@ function Home() {
             <ul>
               <li>
                 {" "}
-                <i className="fas fa-check"></i> 1000+ downloads{" "}
+                <i className="fas fa-check"></i> 5000+ USERS{" "}
               </li>
               <li>
                 {" "}
@@ -290,14 +215,14 @@ function Home() {
               </li>
               <li>
                 {" "}
-                <i className="fas fa-check"></i> unlimited storage{" "}
+                <i className="fas fa-times"></i> 1000 Rooms{" "}
               </li>
               <li>
                 {" "}
-                <i className="fas fa-times"></i> 5 downloads{" "}
+                <i className="fas fa-times"></i> 10000 Enteries{" "}
               </li>
             </ul>
-            <a href="#" className="btn">
+            <a href="/Login" className="btn">
               check out
             </a>
           </div>
@@ -310,7 +235,7 @@ function Home() {
             <ul>
               <li>
                 {" "}
-                <i className="fas fa-check"></i> 1000+ downloads{" "}
+                <i className="fas fa-check"></i> 10000+ USERS{" "}
               </li>
               <li>
                 {" "}
@@ -318,14 +243,14 @@ function Home() {
               </li>
               <li>
                 {" "}
-                <i className="fas fa-check"></i> unlimited storage{" "}
+                <i className="fas fa-times"></i> unlimited Rooms{" "}
               </li>
               <li>
                 {" "}
-                <i className="fas fa-check"></i> 5 downloads{" "}
+                <i className="fas fa-times"></i> unlimited Enteries{" "}
               </li>
             </ul>
-            <a href="#" className="btn">
+            <a href="/Login" className="btn">
               check out
             </a>
           </div>
@@ -369,9 +294,9 @@ function Home() {
           <div className="box" style={{ color: "black" }}>
             <h3 style={{ color: "black" }}>about us</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-              pariatur rerum consectetur architecto ad tempora blanditiis quo
-              aliquid inventore a.
+              We are team of two who faced the reality of covid and faced many
+              crises and lost people so we developed this inorder to reduce the
+              loss because of pandemic
             </p>
           </div>
 
@@ -399,26 +324,27 @@ function Home() {
               <i className="fas fa-phone"></i>
               <p>
                 {" "}
-                +123-456-7890 <br /> +111-2222-333{" "}
+                +91-8886914949 <br /> +91-7569967428{" "}
               </p>
             </div>
             <div className="info">
               <i className="fas fa-envelope"></i>
               <p>
                 {" "}
-                example@gmail.com <br /> example@gmail.com{" "}
+                bharathmaradana86@gmail.com <br />{" "}
+                yaswanthpilla1752003@gmail.com{" "}
               </p>
             </div>
             <div className="info">
               <i className="fas fa-map-marker-alt"></i>
-              <p> mumbai, india - 400104 </p>
+              <p> Andhra Pradesh, india - 400104 </p>
             </div>
           </div>
         </div>
 
         <h1 className="credit">
           {" "}
-          &copy; copyright @ 2021 by mr. web designer{" "}
+          &copy; copyright @ 2021 by Online_voting_System
         </h1>
       </div>
     </div>

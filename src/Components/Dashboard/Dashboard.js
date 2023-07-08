@@ -125,6 +125,7 @@ function Dashboard() {
   };
 
   if (localStorage.getItem("token") == null) {
+    localStorage.clear();
     return <Navigate to="/login" />;
   }
   // useEffect(() =>
@@ -191,17 +192,17 @@ function Dashboard() {
           <label for="menu-bar" className="fas fa-bars"></label>
 
           <nav className="navbar">
-            <a href="/Home">Home</a>
-            <a href="/Home">Features</a>
+            <a href="/">Home</a>
+            <a href="/">Features</a>
             {localStorage.getItem("roomid") ? (
               <a href="/Dashboard">Dasboard</a>
             ) : (
-              <a href="/Home">About</a>
+              <a href="/">About</a>
             )}
             {localStorage.getItem("userid") ? (
               <a href="/Profile">Profile</a>
             ) : (
-              <a href="/Home">Rating</a>
+              <a href="/">Rating</a>
             )}
             {exists ? (
               <a href="/Rooms">Rooms</a>
@@ -209,7 +210,7 @@ function Dashboard() {
               <a href="/Register">Register</a>
             )}
             {exists ? (
-              <a onClick={() => logout_1()} href="/Login">
+              <a onClick={() => logout_1()} href="/">
                 Logout
               </a>
             ) : (

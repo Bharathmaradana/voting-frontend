@@ -13,6 +13,7 @@ import Timeout_1 from "./Components/Dashboard/Timeout_1";
 import MainResults from "./Components/Dashboard/MainResults";
 import ProfilePage from "./Components/Dashboard/Profile";
 import Analytics from "./Components/Dashboard/Analytics";
+import MainDashboard from "./Components/Dashboard/MainDashboard";
 
 export const store = createContext();
 function App() {
@@ -22,7 +23,7 @@ function App() {
       <store.Provider value={[token, settoken]}>
         <BrowserRouter>
           <Routes>
-            <Route path="/Home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/Register" element={<Register />} />
             <Route path="/Dashboard" element={<Dashboard />} />
@@ -32,6 +33,7 @@ function App() {
             <Route path="/result" element={<MainResults />} />
             <Route path="/Profile" element={<ProfilePage />} />
             <Route path="/Analytics" element={<Analytics />} />
+            <Route path="/MainDashboard" element={<MainDashboard/>}/>
           </Routes>
         </BrowserRouter>
       </store.Provider>
